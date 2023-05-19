@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load humanize %}
+{% load custom_filters %}
+{% block title %}
+  마이페이지 |
+  {% if not q %}
+    내 정보
+  {% else %}
+    {{ q|mypage_kr }}
+  {% endif %}
+{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'accounts\css\mypage.css' %}">
+
+{% comment %} 수정 {% endcomment %}
+<div class="mypage-body">
+  <div class='mypage-body__left'>
+      <a class="mypage-body__left__content {% if not q %}change-green{% else %} pass {% endif %}" href="{% url 'accounts:mypage' %}">내 정보
+      <a class="{% if q == 'course' %}change-green{% endif %} mypage-body__left__content" href="{% url 'accounts:mypage' %}?q=course">내 학습
+      </a>
+      <a class="{% if q == 'review' %}change-green{% endif %} mypage-body__left__content" href="{% url 'accounts:mypage' %}?q=review">내 수강평
+      </a>
+      <a class="{% if q == 'cart' %}change-green{% endif %} mypage-body__left__content" href="{% url 'accounts:mypage' %}?q=cart">수강바구니</a>
+  </div>
+
+  
+{% comment %} 프로필 카드 {% endcomment %}
+  <div>
+  {% if not q %}{% with q='course' %}{% endwith %}
+    {% if request.user.is_authenticated %}
+    <div class="profile-container">
+        
+      <div class="header">
+        <div class="content">
+          <div class='mypage-img'>
+            {% if request.user.image %}
+                <img class='w-100 rounded-circle' src="{{ request.user.image.url }}" alt="{{ user.username }}'s Profile Image" class="profile-image">
+            {% else %}
+                <img class='w-100 rounded-circle' src="{% static 'courses/image/noimage.png' %}" alt="noimage">
+            {% endif %}
+          </div>
+          <div class="info">
+            <section>
+              <div>아이디</div>
+              <div>{{ user.username }}</div>
+            </section>
+            <section>
+              <div>이름</div>
+              <div>{{ user.last_name }}{{ user.first_name }}</div>
+            </section>
+            <section>
+              <div>수강평</div>
+              <div>{{ user.review_set.all.count }}개</div>
+            </section>
+            <section>
+              <div>커뮤니티</div>
+              <div>{{ user.comment_set.all.count }}개</div>
+            </section>
+            <section>
+              <div>수강중인 강의</div>
+              <div>{{ user.enrolment_courses.all.count }}개</div>
+            </section>
+            <div class='mt-3'>
+              <a href="{% url 'accounts:update' %}">회원정보수정</a>
+              <a href="{% url 'accounts:change_password' %}">비밀번호변경</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mypage-calendar">
+        <div class='mypage-body__right'>
+          <body>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                  <div class="todo-wrap mb-5">
+                    <div class="todo-title mb-1">Todo List</div>
+                    <div class="input-wrap">
+                      <input type="text" placeholder="오늘 할 일은 무엇인가요?" id="input-box" class="input-box">
+                      <button type="button" id="input-data" class="calendar-btn input-data">INPUT</button>
+                      <div id="input-list" class="input-list"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-right">
+                  <table id="calendar" align="center">
+                    <thead>
+                      <tr class="btn-wrap clearfix">
+                        <td>
+                          <label id="prev">
+                              &#60;
+                          </label>
+                        </td>
+                        <td align="center" id="current-year-month" colspan="5"></td>
+                        <td>
+                          <label id="next">
+                              &#62;
+                          </label>
+                        </td>
+                      </tr>
+                      <tr>
+                          <td class = "sun" align="center">Sun</td>
+                          <td align="center">Mon</td>
+                          <td align="center">Tue</td>
+                          <td align="center">Wed</td>
+                          <td align="center">Thu</td>
+                          <td align="center">Fri</td>
+                          <td class= "sat" align="center">Sat</td>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body" class="calendar-body"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </body>
+        </div>
+      </div>
+    </div>
+
+    <div class=''>
+      <h2 class='info-list-content'>내가 쓴 글</h2>
+      {% for comment in request.user.comment_set.all %}
+        <a class='mypage-comment-box' href="{% url 'communities:comment_detail' comment.pk %}">
+          <div class='mypage-comment-left'>
+            <h1>
+              {{ comment.title }}
+            </h1>
+
+            <h2>
+              {{ comment.content|striptags }}
+            </h2>
+          </div>
+
+          <div class='mypage-comment-img'>
+            <img class='w-100' src="{{ comment.course.image.url }}" alt="{{ comment.course.title }}">
+          </div>
+        </a>
+      {% empty %}
+        <div style='min-height: 100px;'>
+          <h5 class='pt-5 ps-5 text-secondary'>작성한 글이 없습니다. 😥</h5>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% endif %}
+  {% endif %}
+
+  
+  {% if q == 'course' %}
+    {% include 'accounts/course.html' %}
+  {% elif q == 'review' %}
+    {% include 'accounts/review.html' %}
+  {% elif q == 'cart' %}
+  {% include 'accounts/cart.html' %}
+  {% endif %}
+  </div>
+</div>
+
+
+
+<script src="{% static 'accounts/js/mypage.js' %}"></script>
+{% endblock content %} 

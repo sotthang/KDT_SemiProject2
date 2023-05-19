@@ -1,0 +1,189 @@
+.course {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.course-video {
+  width: 70%;
+}
+
+.course-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.course-complete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.course-video-url {
+  width: 100%;
+  height: 75vh;
+}
+
+.course-video-list iframe {
+  display: none;
+}
+
+.descriptions-btn {
+  font-size: 13px;
+  color: rgb(235 235 235);
+}
+
+.textarea-btn {
+  font-size: 13px;
+  color: rgb(235 235 235);
+}
+
+.course-descriptions-file-memo {
+  display: flex;
+  justify-content: center;
+}
+
+.course-descriptions-file-memo-text {
+  width: 90%;
+  height: 30vh;
+  background-color: rgb(240 240 240);
+  border: 1px solid rgb(240 240 240);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.course-descriptions-file-memo-text:focus {
+  outline: 1px solid rgb(200 200 200);
+}
+
+.course-descriptions-file-download {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.course-descriptions {
+  height: 75vh;
+  width: 20%;
+  margin: 15px;
+  padding: 20px;
+  border: 1px solid rgb(100 100 100);
+  background-color: rgb(35 34 36);
+  color: rgb(220 220 220);
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.1);
+}
+
+.course-descriptions-quiz {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-descriptions-content {
+  display: none;
+  height: 40vh;
+  margin: 3px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.course-descriptions-file {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.show2 {
+  display: flex;
+  justify-content: center;
+}
+
+.modal2 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 450px;
+}
+
+.modal-content > span {
+  font-size: 25px;
+}
+
+.video-course-content {
+  font-size: 15px;
+  color: rgb(200 200 200);
+  padding: 10px;
+  border: 1px solid rgb(200 200 200);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.video-title {
+  font-weight: 600;
+  color: rgb(235 235 235);
+}
+
+body {
+  background-color: rgb(20 21 23);
+}
+
+.video-header {
+  height: 52px;
+  width: 100%;
+  background-color: rgb(35 33 36);
+  padding-top: 15px;
+}
+
+.video-header div {
+  color: rgb(220 220 220);
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 60px;
+}
+
+.video-footer {
+  height: 80px;
+  background-color: rgb(35 33 36);
+}
+
+.video-quiz-btn {
+  border: 1px solid rgb(240 240 240);
+  border-radius: 5px;
+  color: rgb(200 200 200);
+  font-size: 15px;
+  padding: 8px 12px;
+  background-color: rgb(35 34 36);
+}
+
+.video-quiz-btn:hover {
+  background-color: rgb(9, 135, 83);
+  color: white;
+}
+
+.video-header-back {
+  font-size: 16px;
+  color: rgb(180 180 180);
+  text-decoration: none;
+  margin-right: 100px;
+}
+
+.video-header-back:hover {
+  color: white;
+}

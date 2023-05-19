@@ -1,0 +1,44 @@
+.container-update{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 170px;
+  height: 100vh;
+  transform: scale(1.05);
+}
+
+.form-update {
+  width: 312px;
+}
+
+.update-button {
+  border: 0;
+  font-weight: 700;
+  background-color: #00c471;
+  color: #fff;
+  width: 312px;
+  border-radius: 10px;
+  display: block;
+  text-align: center;
+  line-height: 3rem;
+  margin-bottom: 10px;
+  box-shadow: 1px 7px 15px 4px rgba(0,0,0,0.1);
+}
+
+.change_password-button  {
+  font-weight: 700;
+  background-color: #00c471;
+  color: #fff;
+  width: 312px;
+  border-radius: 10px;
+  display: block;
+  text-align: center;
+  line-height: 3rem;
+  margin-bottom: 10px;
+  text-decoration: none;
+  box-shadow: 1px 7px 15px 4px rgba(0,0,0,0.1);
+}
+
+.update-button:hover, .change_password-button:hover {
+  background-color: #03985a;
+}

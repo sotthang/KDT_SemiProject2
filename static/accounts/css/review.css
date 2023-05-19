@@ -1,0 +1,88 @@
+.review-body {
+  width: 1000px;
+  min-height: 600px;
+}
+
+.review-body__review {
+  display: flex;
+  padding: 20px 0;
+  height: auto;
+  border-bottom: 1px solid #dbdada;
+}
+
+.review-header-title {
+  color: rgb(80 80 80);
+  padding-bottom: 40px;
+  border-bottom: 1px solid #dbdada;
+  margin-bottom: 0;
+  font-weight: bold;
+  min-width: 950px;
+}
+
+
+.review-left {
+  flex: 1;
+  height: auto;
+  width: auto;
+  padding: 0 15px;
+}
+
+.review-right__img {
+  display: block;
+  width: 130px;
+  height: 100%;
+  border: 0;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.review-right__img:hover {
+  transform: scale(1.05);
+}
+
+.banner-star-box {
+  position: relative;
+  width: 120px;
+}
+
+.banner-star-box img {
+  width: 120px;
+}
+
+.banner-star-yellow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.lecture-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.review-left__info {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.review-left__info h1 {
+  font-size: 14px;
+  color: rgb(112 112 112);
+}
+
+.review-left__info h2 {
+  font-size: 13px;
+  color: rgb(112 112 112);
+  margin-right: 20px;
+}
+
+.review-left__content {
+  margin-left: 5px;
+  margin-top: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

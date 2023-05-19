@@ -1,0 +1,167 @@
+/* Community Header */
+
+.community-box-header {
+  background-color: #212529;
+  margin: 0;
+  padding: 0;
+  height: 101px;
+}
+
+.community-header {
+  background-color: #212529;
+  padding: 24px;
+  text-align: left;
+  margin: auto;
+  max-width: 1200px;
+    height: 101px;
+
+}
+
+.review-right-a {
+  transition: transform 0.3s ease;
+}
+
+.review-right-a:hover {
+  transform: scale(1.05);
+}
+
+@media(max-width: 1200px) {
+  .community-header {
+    background-color: #212529;
+    padding: 24px;
+    text-align: left;
+    margin-left: 0;
+    max-width: 1200px;
+    height: 101px;
+    }
+  }
+/* 1200 기준으로 margin left 0으로 */
+
+.community-header__title {
+  font-size: 24px;
+  color: #f8f8f8;
+}
+
+.community-header__content {
+  margin: 6px 0 0;
+  font-size: 16px;
+  color: #f8f8f8;
+}
+
+.community-body {
+  display: flex;
+  padding: 32px;
+  margin: auto;
+  max-width: 1200px;
+
+}
+
+.community-body__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+@media(max-width: 1200px) {
+  .community-body__left {
+    max-width: 1200px;
+    display: none;
+  }
+  }
+
+
+.community-body__left__content {
+  align-self: start;
+  color: rgb(0, 196, 113);
+  padding: 5px 15px;
+  font-size: 16px;
+  width: 171px;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.community-body__right {
+  flex: 5;
+  align-items: center;
+}
+
+.community-body__review {
+
+  display: flex;
+  padding: 8px 16px;
+  height: auto;
+  margin: 0 5px;
+  border-bottom: 1px solid #dbdada;
+}
+
+
+.review-left {
+  flex: 1;
+  height: auto;
+  width: auto;
+  padding: 0 15px;
+
+}
+
+.review-left__content {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #000a12;
+  text-size-adjust: 100%;
+}
+
+.review-left__info {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #595959;
+}
+
+.review-right__img {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  height: 100%;
+}
+
+
+.banner-star-box {
+  position: relative;
+  width: 120px;
+}
+
+.banner-star-box img {
+  width: 120px;
+}
+
+.banner-star-yellow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.lecture-img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* 페이지네이션 */
+
+.page-link {
+  color: black;
+  background-color: white;
+}
+
+.page-item.active .page-link {
+    background-color: #1dc078;
+    color: white;
+    border-color: #1dc078;
+}
+
+.community-body__left__after {
+  font-size: 12px;
+  color: rgb(173 181 189);
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
